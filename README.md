@@ -10,10 +10,3 @@ Folding@Home Webcontrol is a web-based version of the FAHControl client, provide
 
 This software is licenced to the user under GNU GPL v2.0.
 
-However, the software uses portions from the library [POLLib](https://github.com/farzadghanei/POLlib), which is licenced under the Apache Licence v2. For more information, head to the linked repository and look at the files named [LICENCE](https://github.com/farzadghanei/POLlib/blob/master/LICENSE), [NOTICE](https://github.com/farzadghanei/POLlib/blob/master/NOTICE), AND [COPYING](https://github.com/farzadghanei/POLlib/blob/master/COPYING).
-
-**Portions of this program are licenced from a third party library:**
-
-_PHP Telnet Module:_
-Copyright (c) 2010-2013 ParsOnline, Inc. (www.parsonline.com)
-
