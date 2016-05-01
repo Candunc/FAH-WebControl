@@ -34,7 +34,7 @@ if string.sub(read("*l"),1,4) ~= "PyON" then
 		conn:send("exit\n")
 		os.exit()
 	else	
-		conn:send("auth "..arg[2].."\n")
+		conn:send("auth "..string.gsub(arg[2],"\\","").."\n")
 		if string.sub(read("*l"),3,4) ~= "OK" then
 			print("Wrong password!")
 			conn:send("exit\n")

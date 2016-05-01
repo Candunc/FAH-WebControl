@@ -1,20 +1,20 @@
 <?php
-function getSlots(host,pass,port) {
+function getSlots($host,$pass,$port) {
 	// Returns JSON array of data from the Folding@Home Client
-	$str = ""
-	if isset($host) {
+	$str = "";
+	if (isset($host)) {
 		$str = ($str . escapeshellarg($host) . ' ');
 	}
-	if isset($pass) {
+	if (isset($pass)) {
 		$str = ($str . escapeshellarg($pass) . ' ');
 	}
-	if isset($port) {
+	if (isset($port)) {
 		$str = ($str . escapeshellarg($port) . ' ');
 	}
-	return exec('lua wrapper.lua ' . $str);
+	return json_decode(shell_exec('lua wrapper.lua ' . $str));
 }
 
-function getSensors(url) {
+function getSensors($url) {
 	// HTTP GET to a OpenHardwareMonitor web server; returns the JSON array
 	return file_get_contents($url);
 }
@@ -22,10 +22,10 @@ $configs = include('config.php'); // Contains settings and hosts
 $out = array();
 
 foreach ($configs['machines'] as $key => $value) {
-	$out[$key] = getSlots($value['host'],$value['pass'],$value['port']);
-	if ($value["sensors"]) {
-		$out[$key][$sensors] = getSensors($value['host']);
-	}
+	$out[$key] = array('folding' => getSlots($value['host'],$value['pass'],$value['port']));
+//	if ($value["sensors"] == true) {
+//		$out[$key]["sensors"] = getSensors($value['host']);
+//	}
 }
 echo(json_encode($out)); //Basically let the client deal with the shit for now.
 ?>
