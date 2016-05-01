@@ -13,8 +13,8 @@
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
+	<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
 
 	<!-- Custom styles for this template -->
 	<link href="css/starter-template.css" rel="stylesheet">
@@ -67,8 +67,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
 	<script src="js/bootstrap.min.js"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug (Not actually included)
+	<script src="js/ie10-viewport-bug-workaround.js"></script> -->
 	<!-- Script for the dials -->
 	<script src="js/jquery.knob.min.js"></script>
 	<script>
@@ -79,7 +79,7 @@
 	<script>
 	setInterval(function() {
 		$.ajax({ // 
-			url: "backend.php",
+			url: "backend.php?q=fold_stats",
 			dataType: "JSON",
 			success: function(json){
 				var perc = json[0]["folding"][0]["percentdone"];
