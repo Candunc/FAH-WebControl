@@ -80,7 +80,7 @@ if (isset($_GET['q'])) {
 				$out['bitcoin'] = $input['data'];
 			} else {
 				$data = (file_get_contents('https://blockchain.info/q/addressbalance/' . $config['wallet']['bitcoin'])/100000000); //Satochi conversion
-				file_put_contents($filename, json_encode(array('timestamp' => time(), 'data' => $data)));
+				file_put_contents('cache/' . $filename, json_encode(array('timestamp' => time(), 'data' => $data)));
 				$out['bitcoin'] = $data;
 			}
 		}
