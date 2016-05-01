@@ -6,6 +6,16 @@ Folding@Home Webcontrol is a web-based version of the FAHControl client, provide
 
 * wrapper.lua: A wrapper that connects to FAHClient via tcp, grabs the info, and returns it in json format. 
 
+## Installation
+
+* Ensure the system has some sort of web stack with PHP (Apache or Nginx is okay)
+* Install lua (The one in your distribution should be okay) and luarocks (From source works best)
+* Install Luasocket (On Ubuntu you may get an error that is could not be installed, install unzip)
+* Run the command ```'luac --out /opt/wrapper.lua wrapper.lua``` (This should speed up the backend by ~0.100 ms)
+* move html/ to your web root
+
+And that _should_ be it. I'll add better instructions once the program is more mature.
+
 ## Licence 
 
 This software is licenced to the user under GNU GPL v2.0.

@@ -1,0 +1,9 @@
+Definitely add some sort of caching option to prevent so many calls
+ * Rewrite wrapper.lua to take advantage of the Folding@Home client automatic update
+ * Maybe move to a database setup so stats are saved and can be graphed over time
+
+Rewrite interface to dynamically respond to the amount of slots / machines being watched
+Add an interface for Curecoin market prices?
+
+Add selenium to project & backend for logging into cryptobullionpools to bypass cloudflare
+ -> Needed for points / curecoin calculation and current curecoins

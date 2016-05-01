@@ -11,7 +11,7 @@ function getSlots($host,$pass,$port) {
 	if (isset($port)) {
 		$str = ($str . escapeshellarg($port) . ' ');
 	}
-	return json_decode(shell_exec('lua wrapper.lua ' . $str)); //Todo: Absolute path in /opt/
+	return json_decode(shell_exec('lua /opt/wrapper.lua ' . $str)); //Todo: Verify file with sha256sum? Maybe ensure that it exists, if not compile.
 }
 
 function getSensors($url) {
