@@ -52,9 +52,10 @@
 
 		<div class="starter-template">
 			<h1>Bootstrap starter template</h1>
-			<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-			<input type="text" class="dial" data-angleArc="250" data-angleOffset="-125" data-min="15" data-max="110" data-fgColor="#26A65B" data-readOnly="true">
-        </div>
+			<p class="lead">Use this document as a way to quickly start any new project.<br> Below this is the percent completion for the first slot of the first machine.</p>
+			<input type="text" class="dial" data-angleArc="250" data-angleOffset="-125" data-min="0" data-max="100" data-fgColor="#26A65B" data-readOnly="true" id="0_percent">
+			<p> Time remaining:</p><div id="0_eta"></div>
+		</div>
 		</div>
 
 	</div><!-- /.container -->
@@ -74,6 +75,19 @@
 	$(function() {
 		$(".dial").knob();
 	});
+	</script>
+	<script>
+	setInterval(function() {
+		$.ajax({ // 
+			url: "backend.php",
+			dataType: "JSON",
+			success: function(json){
+				var perc = json[0]["folding"][0]["percentdone"];
+				document.getElementById("0_percent").value = perc.slice(0,-1);
+				document.getElementById("0_eta").innerHTML = json[0]["folding"][0]["eta"]
+			}
+		})
+	}, 5000);
 	</script>
 	</body>
 </html>

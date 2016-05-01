@@ -1,0 +1,9 @@
+<?php
+
+return array(
+	//Todo: Move machines array to database and add options to the frontend to add/remove machines, rather than this hardcoded crap.
+	'host' => '127.0.0.1',
+	'port' => 36300,
+	'pass' => 'password',
+	'sensors' => false
+);
