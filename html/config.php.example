@@ -1,9 +1,16 @@
 <?php
+if (!file_exists('cache/')) { // Just because we know this file will be called, we will use this to make our cache directory.
+	mkdir('cache/', 0600); //No need for execution nor other users to read.
+}
 
 return array(
 	//Todo: Move machines array to database and add options to the frontend to add/remove machines, rather than this hardcoded crap.
 	'host' => '127.0.0.1',
 	'port' => 36300,
 	'pass' => 'password',
-	'sensors' => false
+	'sensors' => false,
+
+	'wallet' => array(
+		'curecoin' => 'BS6b69t34oFdqhTFdi9GtpJheyFhESNVvH' //Not my wallet! Just a random high-worth one.
+	)
 );
