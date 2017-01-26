@@ -7,3 +7,16 @@ Add an interface for Curecoin market prices?
 
 Add selenium to project & backend for logging into cryptobullionpools to bypass cloudflare
  -> Needed for points / curecoin calculation and current curecoins
+
+Move Settings to Database Entry.
+* Need a startup wizard to ensure dependancies are set and to initialize the config. (admin.php)
+
+** Database Schematic **
+
+cache table
+-> postix time of grab
+-> data (string)
+
+settings
+-> option
+-> setting

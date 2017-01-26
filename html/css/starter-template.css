@@ -5,3 +5,23 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+/* From http://stackoverflow.com/a/6663566/1687505 */
+.div-table{
+  display:table;
+  width:auto;
+  margin: 0 auto;
+  border:1px solid  #aaa;
+  background-color: #eee;
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+.div-table-row{
+  display:table-row;
+  width:auto;
+  clear:both;
+}
+.div-table-col{
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;
+  width:200px;
+}

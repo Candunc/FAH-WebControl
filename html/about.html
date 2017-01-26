@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Folding@Home Stats | Home</title>
+	<title>Folding@Home Stats | About</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,9 +40,9 @@
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-			<li class="active"><a href="index.html">Stats</a></li>
+			<li><a href="index.html">Stats</a></li>
 			<li><a href="currency.html">Currency</a></li>
-			<li><a href="about.html">About</a></li>
+			<li class="active"><a href="about.html">About</a></li>
 			<li><a href="admin.php">Settings</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
@@ -52,11 +52,31 @@
 	<div class="container">
 
 		<div class="starter-template">
-			<h1>Bootstrap starter template</h1>
-			<p class="lead">Use this document as a way to quickly start any new project.<br> Below this is the percent completion for the first slot of the first machine.</p>
-			<input type="text" class="dial" data-angleArc="250" data-angleOffset="-125" data-min="0" data-max="100" data-fgColor="#26A65B" data-readOnly="true" id="0_percent">
-			<p> Time remaining:</p><div id="0_eta"></div>
-		</div>
+			<h2>Folding@Home Stats Release 0</h2><br>
+			<p style="font-size:14.5px">
+				Handcrafted by Duncan Bristow using Bootstrap, PHP, and Lua.<br><br>
+
+				Find out more about <a href="https://folding.stanford.edu/">Folding@Home</a> or <a href="https://github.com/Candunc/FAH-WebControl">This Project</a>.<br><br>
+				
+				Support Folding@Home Stats by donating to the following addresses. Thank you for your contribution!
+			</p>
+
+			<div class="div-table">
+			<div class="div-table-row">
+				 <div class="div-table-col">Curecoin</div>
+				 <div class="div-table-col"></div>
+			</div>
+			<div class="div-table-row">
+				 <div class="div-table-col">Bitcoin</div>
+				 <div class="div-table-col"></div>
+			</div>
+			<div class="div-table-row">
+				 <div class="div-table-col">Etherium</div>
+				 <div class="div-table-col"></div>
+			</div>
+			</p></table>
+
+
 		</div>
 
 	</div><!-- /.container -->
@@ -70,25 +90,5 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug (Not actually included)
 	<script src="js/ie10-viewport-bug-workaround.js"></script> -->
-	<!-- Script for the dials -->
-	<script src="js/jquery.knob.min.js"></script>
-	<script>
-	$(function() {
-		$(".dial").knob();
-	});
-	</script>
-	<script>
-	setInterval(function() {
-		$.ajax({ // 
-			url: "backend.php?q=fold_stats",
-			dataType: "JSON",
-			success: function(json){
-				var perc = json[0]["folding"][0]["percentdone"];
-				document.getElementById("0_percent").value = perc.slice(0,-1);
-				document.getElementById("0_eta").innerHTML = json[0]["folding"][0]["eta"]
-			}
-		})
-	}, 5000);
-	</script>
 	</body>
 </html>
